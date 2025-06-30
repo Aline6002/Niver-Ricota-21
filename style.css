@@ -1,93 +1,116 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:wght@400;700&display=swap');
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-body {
-  display: flex;
-  justify-content: center; /* centraliza horizontalmente */
-  align-items: center;     /* centraliza verticalmente */
-  min-height: 100vh;
-  background: linear-gradient(135deg, #fff5e6, #ffecd2);
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #fff5e6, #ffecd2);
   color: #4a2c00;
-  padding: 10px;
-  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
 }
 
 .container {
-  max-width: 600px;
-  width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
-  background: #fff8e1;
-  padding: 30px 25px;
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(230, 120, 20, 0.3);
+  background-color: #fff8e1;
+  width: 95%;
+  max-width: 1200px;  /* limite maior para usar toda a tela, mas não exagerar */
+  margin: 0 auto 40px;
+  padding: 35px 20px;
   border: 4px solid #ff6f00;
-  position: relative;
-  margin: 0;
-  text-align: center;
-  box-sizing: border-box;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(230, 120, 20, 0.25);
+  user-select: none;
+  word-break: break-word;
 }
 
 h1.greeting {
   font-family: 'Fredoka One', cursive;
-  font-size: 3rem;
+  font-size: 2.8rem;
   color: #d84315;
-  text-shadow: 1px 1px 3px #ffb300;
-  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px #ffb300;
+  margin-bottom: 25px;
 }
 
 .message {
-  font-size: 1.25rem;
-  margin-bottom: 20px;
   font-weight: 600;
+  font-size: 1.2rem;
   color: #6d4c41;
-  line-height: 1.5;
-  text-shadow: 0 1px 1px #ffe0b2;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  text-shadow: 0 1px 2px #ffe0b2;
 }
 
-.sub-msg {
-  background: #ffd54f;
-  border-radius: 15px;
-  padding: 18px 20px;
-  font-size: 1.1rem;
-  margin: 15px auto;
-  max-width: 550px;
-  box-shadow: inset 0 0 10px rgba(255, 235, 59, 0.8);
-  color: #4e342e;
-  font-weight: 500;
-  font-style: italic;
-  transition: background-color 0.4s ease;
+.relacionamentos {
+  background-color: #fff3e0;
+  border: 3px solid #ff8f00;
+  padding: 25px 30px;
+  border-radius: 25px;
+  margin: 40px auto;
+  box-shadow: 0 0 15px rgba(255, 143, 0, 0.45);
+  color: #bf360c;
+  font-family: 'Fredoka One', cursive;
+  text-align: left;
+  transition: box-shadow 0.4s ease;
+  max-width: 100%;
   box-sizing: border-box;
 }
 
-.sub-msg:hover {
-  background-color: #ffca28;
+.relacionamentos:hover {
+  box-shadow: 0 0 30px rgba(255, 143, 0, 0.9);
+}
+
+.relacionamentos h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #d84315;
+  text-shadow: 2px 2px 6px #ffb300;
+}
+
+.relacionamentos ul {
+  list-style-type: square;
+  padding-left: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.relacionamentos li {
+  margin-bottom: 10px;
+  color: #6d4c41;
+  cursor: default;
 }
 
 button#surpriseBtn {
   background-color: #ff7043;
   border: none;
-  color: white;
-  padding: 15px 40px;
+  border-radius: 35px;
+  padding: 18px 50px;
   font-size: 1.3rem;
   font-weight: 700;
-  border-radius: 30px;
+  color: white;
   cursor: pointer;
-  box-shadow: 0 6px #bf360c;
+  box-shadow: 0 8px #bf360c;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 20px;
+  margin-top: 30px;
+  display: inline-block;
+  user-select: none;
   box-sizing: border-box;
 }
 
 button#surpriseBtn:hover:not(:disabled) {
   background-color: #e64a19;
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
 button#surpriseBtn:disabled {
@@ -97,15 +120,27 @@ button#surpriseBtn:disabled {
   transform: none;
 }
 
+#tirada {
+  margin-top: 10px;
+  font-weight: 700;
+  color: #d84315;
+  user-select: none;
+  font-size: 1.15rem;
+}
+
 #surpriseMessage {
   display: none;
-  margin-top: 30px;
+  margin-top: 40px;
   font-weight: 700;
-  color: #2e7d32;
   font-size: 1.3rem;
+  color: #2e7d32;
   animation: fadeInUp 1s ease forwards;
   text-align: center;
-  box-sizing: border-box;
+  user-select: none;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  word-break: break-word;
 }
 
 #surpriseMessage.show {
@@ -113,99 +148,60 @@ button#surpriseBtn:disabled {
 }
 
 #surpriseMessage img {
-  margin-top: 20px;
+  margin-top: 25px;
   max-width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease;
+  cursor: pointer;
 }
 
 #surpriseMessage img:hover {
-  transform: scale(1.05) rotate(-3deg);
+  transform: scale(1.07) rotate(-3deg);
 }
 
-.relacionamentos {
-  background: #fff3e0;
-  border: 3px solid #ff8f00;
-  padding: 20px 30px;
-  margin: 30px auto;
-  border-radius: 20px;
-  max-width: 550px;
-  color: #bf360c;
-  font-family: 'Fredoka One', cursive;
-  text-align: left;
-  box-shadow: 0 0 10px rgba(255, 143, 0, 0.4);
-  transition: box-shadow 0.5s ease;
-  box-sizing: border-box;
-}
-
-.relacionamentos:hover {
-  box-shadow: 0 0 20px rgba(255, 143, 0, 0.8);
-}
-
-.relacionamentos h2 {
-  text-align: center;
-  font-size: 1.9rem;
-  margin-bottom: 15px;
-  color: #d84315;
-  text-shadow: 1px 1px 3px #ffb300;
-}
-
-.relacionamentos ul {
-  list-style-type: square;
-  padding-left: 20px;
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-.relacionamentos li {
-  margin-bottom: 8px;
-  cursor: default;
-  color: #6d4c41;
-}
-
-/* Animações */
-
+/* ===== Animações ===== */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
-  } to {
+    transform: translateY(25px);
+  }
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Media Queries para Responsividade */
-
+/* ===== Responsividade ===== */
 @media (max-width: 768px) {
   h1.greeting {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
   .message {
     font-size: 1.1rem;
-  }
-  .sub-msg {
-    font-size: 1rem;
-    padding: 15px 15px;
-    max-width: 100%;
-  }
-  button#surpriseBtn {
-    font-size: 1.2rem;
-    padding: 14px 30px;
-    margin: 20px auto;
-    display: block;
-    width: 80%;
+    margin-bottom: 25px;
   }
   .relacionamentos {
-    max-width: 100%;
-    padding: 15px 20px;
+    padding: 20px 25px;
   }
   .relacionamentos h2 {
     font-size: 1.6rem;
   }
   .relacionamentos ul {
     font-size: 1rem;
+  }
+  button#surpriseBtn {
+    font-size: 1.2rem;
+    padding: 16px 35px;
+    margin: 25px auto;
+    width: 90%;
+    display: block;
+  }
+  #surpriseMessage {
+    font-size: 1.2rem;
+  }
+  #surpriseMessage img {
+    max-height: 280px;
   }
 }
 
@@ -215,20 +211,23 @@ button#surpriseBtn:disabled {
   }
   .message {
     font-size: 1rem;
-  }
-  .sub-msg {
-    font-size: 0.9rem;
-    padding: 12px 10px;
-  }
-  button#surpriseBtn {
-    font-size: 1.1rem;
-    padding: 12px 20px;
-    width: 100%;
+    margin-bottom: 20px;
   }
   .relacionamentos h2 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
   .relacionamentos ul {
     font-size: 0.9rem;
+  }
+  button#surpriseBtn {
+    font-size: 1rem;
+    padding: 14px 25px;
+    width: 100%;
+  }
+  #surpriseMessage {
+    font-size: 1rem;
+  }
+  #surpriseMessage img {
+    max-height: 220px;
   }
 }
